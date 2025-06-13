@@ -1,7 +1,6 @@
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
 import {SafeAreaView} from 'react-native-safe-area-context';
-import {ScrollView} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {CustomHeader, If, PostCard} from '../../components';
 import {useStore} from '../../states';
@@ -15,7 +14,7 @@ const Profile = ({navigation}: any) => {
     <SafeAreaView style={styles.container}>
       <CustomHeader showMenu showSearch />
       <ScrollView
-        style={styles.profileContainer}
+        contentContainerStyle={styles.profileContainer}
         showsVerticalScrollIndicator={false}>
         {/* Profile Header */}
         <View style={styles.profileHeader}>
@@ -100,10 +99,11 @@ const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
     backgroundColor: '#F3F4F6',
+    // paddingBottom: 80
   },
   profileContainer: {
     flexGrow: 1,
-    paddingBottom: 80
+    paddingBottom: 30,
   },
   profileHeader: {
     backgroundColor: '#fff',

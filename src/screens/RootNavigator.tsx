@@ -1,10 +1,10 @@
 // RootNavigator.js
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Platform, StatusBar} from 'react-native';
 import CustomDrawerContent from '../components/CustomDrawerContent';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import Home from './home';
@@ -12,6 +12,7 @@ import Profile from './profile';
 import Discover from './discover';
 import {DISCOVER_SCREEN, HOME_SCREEN, PRIMARY_COLOR, PROFILE_SCREEN, UPDATE_ACCOUNT} from '../configs';
 import UpdateAccountScreen from './update-account';
+import { useStatusBarColor } from '../hooks';
 
 const Drawer = createDrawerNavigator();
 const Tab = createBottomTabNavigator();
@@ -67,6 +68,7 @@ function DrawerWithBottomTabs() {
 
 // 🚀 Root Navigator
 export default function RootNavigator() {
+  useStatusBarColor("white", "dark-content")
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name={HOME_SCREEN} component={DrawerWithBottomTabs} />

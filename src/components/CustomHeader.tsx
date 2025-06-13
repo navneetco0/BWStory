@@ -11,7 +11,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import type {DrawerNavigationProp} from '@react-navigation/drawer';
 import {logo} from '../assets';
 import {normalize} from '../utils';
-import {useStatusBarColor} from '../hooks';
 import {If} from './blocks';
 import { PRIMARY_COLOR } from '../configs';
 

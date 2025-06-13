@@ -132,6 +132,8 @@ const styles = StyleSheet.create({
   formSection: {
     flex: 1,
     paddingHorizontal: 16,
+    gap: 10,
+    marginTop: 20
   },
   fieldLabel: {
     fontSize: 16,
